@@ -6,13 +6,13 @@ int main()
     Chain2* chain2 = new Chain2();
     Chain3* chain3 = new Chain3();
 
-    // \’z
+    // æ§‹ç¯‰
     chain1->SetNext(chain2)->SetNext(chain3);
 
-    // Às
+    // å®Ÿè¡Œ
     int value = chain1->Request();
 
-    // Œ‹‰Ê
+    // çµæœ
     std::cout << "result = " << value << std::endl;
 
     delete chain2;

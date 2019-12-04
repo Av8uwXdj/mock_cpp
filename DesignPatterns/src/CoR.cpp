@@ -10,7 +10,7 @@ namespace
 }
 
 //--------------------------------------------------
-// Chain of Responsibility ‚ÌŠî’êƒNƒ‰ƒX
+// Chain of Responsibility ã®åŸºåº•ã‚¯ãƒ©ã‚¹
 class Base
 {
 public:
@@ -18,7 +18,7 @@ public:
     Base() : pNext(nullptr) {}
     virtual ~Base() {}
 
-    // Ÿ‚Ìˆ—ƒNƒ‰ƒX‚ğİ’è
+    // æ¬¡ã®å‡¦ç†ã‚¯ãƒ©ã‚¹ã‚’è¨­å®š
     Base* SetNext(Base* pNext)
     {
         assert(pNext != nullptr);
@@ -26,7 +26,7 @@ public:
         return this->pNext;
     }
 
-    // ˆ—‰Â”\‚È‚çˆ—
+    // å‡¦ç†å¯èƒ½ãªã‚‰å‡¦ç†
     int Request()
     {
         if (_CanExec() == true)
@@ -38,7 +38,7 @@ public:
         {
             if (pNext == nullptr)
             {
-                std::cout << "‘Sˆ—ƒNƒ‰ƒX‚Åˆ—‚Å‚«‚È‚©‚Á‚½" << std::endl;
+                std::cout << "å…¨å‡¦ç†ã‚¯ãƒ©ã‚¹ã§å‡¦ç†ã§ããªã‹ã£ãŸ" << std::endl;
             }
             else
             {
@@ -61,7 +61,7 @@ private:
 
 
 //--------------------------------------------------
-// Chain of Responsibility ‚Ì”h¶ƒNƒ‰ƒX1
+// Chain of Responsibility ã®æ´¾ç”Ÿã‚¯ãƒ©ã‚¹1
 class Chain1 : public Base
 {
 public:
@@ -87,7 +87,7 @@ private:
 };
 
 //--------------------------------------------------
-// Chain of Responsibility ‚Ì”h¶ƒNƒ‰ƒX2
+// Chain of Responsibility ã®æ´¾ç”Ÿã‚¯ãƒ©ã‚¹2
 class Chain2 : public Base
 {
 public:
@@ -113,7 +113,7 @@ private:
 };
 
 //--------------------------------------------------
-// Chain of Responsibility ‚Ì”h¶ƒNƒ‰ƒX3
+// Chain of Responsibility ã®æ´¾ç”Ÿã‚¯ãƒ©ã‚¹3
 class Chain3 : public Base
 {
 public:
