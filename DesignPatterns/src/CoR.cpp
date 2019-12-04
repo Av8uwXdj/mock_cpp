@@ -1,16 +1,16 @@
-#include <iostream>
+﻿#include <iostream>
 #include <assert.h>
 
 namespace
 {
     enum
     {
-        CHAIN_HIT_CLASS = 2
+        CHAIN_HIT_CLASS = 5
     };
 }
 
 //--------------------------------------------------
-// Chain of Responsibility の基底クラス
+// CoR ( Chain of Responsibility ) の基底クラス
 class Base
 {
 public:
@@ -51,8 +51,8 @@ public:
 
 private:
 
-    virtual int _Exec() = 0;
-    virtual bool _CanExec() = 0;
+    virtual int _Exec() const = 0;
+    virtual bool _CanExec() const = 0;
 
 private:
 
@@ -61,8 +61,8 @@ private:
 
 
 //--------------------------------------------------
-// Chain of Responsibility の派生クラス1
-class Chain1 : public Base
+// CoR の派生クラス1
+class Chain1 final : public Base
 {
 public:
 
@@ -71,24 +71,20 @@ public:
 
 private:
 
-    int _Exec()
+    int _Exec() const override
     {
         return 1;
     }
 
-    bool _CanExec()
+    bool _CanExec() const override
     {
-        if (CHAIN_HIT_CLASS == 1)
-        {
-            return true;
-        }
-        return false;
+        return CHAIN_HIT_CLASS == 1 ? true : false;
     }
 };
 
 //--------------------------------------------------
-// Chain of Responsibility の派生クラス2
-class Chain2 : public Base
+// CoR の派生クラス2
+class Chain2 final : public Base
 {
 public:
 
@@ -97,24 +93,20 @@ public:
 
 private:
 
-    int _Exec()
+    int _Exec() const override
     {
         return 2;
     }
 
-    bool _CanExec()
+    bool _CanExec() const override
     {
-        if (CHAIN_HIT_CLASS == 2)
-        {
-            return true;
-        }
-        return false;
+        return CHAIN_HIT_CLASS == 2 ? true : false;
     }
 };
 
 //--------------------------------------------------
-// Chain of Responsibility の派生クラス3
-class Chain3 : public Base
+// CoR の派生クラス3
+class Chain3 final : public Base
 {
 public:
 
@@ -123,17 +115,13 @@ public:
 
 private:
 
-    int _Exec()
+    int _Exec() const override
     {
         return 3;
     }
 
-    bool _CanExec()
+    bool _CanExec() const override
     {
-        if (CHAIN_HIT_CLASS == 3)
-        {
-            return true;
-        }
-        return false;
+        return CHAIN_HIT_CLASS == 3 ? true : false;
     }
 };

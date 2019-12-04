@@ -1,4 +1,4 @@
-#include "CoR.cpp"
+﻿#include "CoR.cpp"
 
 int main()
 {
@@ -15,6 +15,7 @@ int main()
     // 結果
     std::cout << "result = " << value << std::endl;
 
+    delete chain3;
     delete chain2;
     delete chain1;
     return 0;
