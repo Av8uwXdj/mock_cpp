@@ -1,0 +1,7 @@
+# white list
+*
+
+# DesignPatterns.sln
+!DesignPatterns
+!DesignPatterns/src
+!DesignPatterns/src/*
