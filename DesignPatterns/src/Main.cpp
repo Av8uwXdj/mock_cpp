@@ -1,8 +1,9 @@
 ﻿#include "CoR.h"
 #include "Observer.h"
+#include "Facade.h"
 
 int main()
 {
-    CoR::ExecExample();
+    Facade::ExecExample();
     return 0;
 }
